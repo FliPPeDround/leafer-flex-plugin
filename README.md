@@ -1,15 +1,18 @@
-# pkg-name
+# leafer-flex-plugin
 
-[![NPM version](https://img.shields.io/npm/v/pkg-name?color=a1b858&label=)](https://www.npmjs.com/package/pkg-name)
+## Installation
 
-## Sponsors
+```bash
+npm install leafer-flex-plugin
+```
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg'/>
-  </a>
-</p>
+## Usage
 
-## License
+```js
+import { FlexPlugin } from 'leafer-flex-plugin'
+import { Box, Leafer, Rect, usePlugin } from 'leafer-ui'
 
-[MIT](./LICENSE) License © 2022 [Anthony Fu](https://github.com/antfu)
+usePlugin(FlexPlugin)
+
+const leafer = new Leafer({ view: window })
+```
