@@ -1,29 +1,34 @@
-import type { IRectInputData } from 'leafer-ui'
-import { Box, Leafer, Rect, usePlugin } from 'leafer-ui'
+import { Box, Leafer, Rect, UI, usePlugin } from 'leafer-ui'
 import { plugin } from 'leafer-flex-plugin'
 
 usePlugin(plugin)
 
 const leafer = new Leafer({ view: window })
 
-type RectFlexInputData = IRectInputData & { margin: number }
-
-const rect = new Box({
-  x: 10,
+const box = new Box({
   width: 100,
   height: 100,
   fill: 'red',
-  margin: 10,
-  padding: 10,
   draggable: true,
-} as RectFlexInputData)
+  margin: 10,
+  flexDirection: 'row',
+  alignItems: 'center',
+})
 
-const rect1 = new Rect({
+const rect = new Rect({
   width: 50,
   height: 50,
-  margin: 10,
   fill: 'blue',
 })
 
-leafer.add(rect)
-rect.add(rect1)
+const ui = UI.one({
+  tag: 'Rect',
+  alignContent: 'center',
+  width: 30,
+  height: 30,
+  fill: '#fff',
+})
+
+leafer.add(box)
+box.add(rect)
+box.add(ui)
