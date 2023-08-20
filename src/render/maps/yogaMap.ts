@@ -17,10 +17,19 @@ import {
   JUSTIFY_SPACE_AROUND,
   JUSTIFY_SPACE_BETWEEN,
   JUSTIFY_SPACE_EVENLY,
+  POSITION_TYPE_ABSOLUTE,
+  POSITION_TYPE_RELATIVE,
+  POSITION_TYPE_STATIC,
   WRAP_NO_WRAP,
   WRAP_WRAP,
   WRAP_WRAP_REVERSE,
 } from 'yoga-wasm-web/asm'
+
+const position = {
+  static: POSITION_TYPE_STATIC,
+  relative: POSITION_TYPE_RELATIVE,
+  absolute: POSITION_TYPE_ABSOLUTE,
+}
 
 const flexDirection = {
   'row': FLEX_DIRECTION_ROW,
@@ -67,6 +76,8 @@ const alignSelf = {
 } as const
 
 export default {
+  // flex child styles
+  position,
   flexDirection,
   flexWrap,
   alignContent,

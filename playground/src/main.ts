@@ -3,13 +3,16 @@ import { plugin } from 'leafer-flex-plugin'
 
 usePlugin(plugin)
 
-const leafer = new Leafer({ view: window })
+const leafer = new Leafer({
+  view: window,
+})
 
 const box = new Box({
   width: 100,
   height: 100,
   fill: 'red',
   draggable: true,
+  y: 100,
   margin: 10,
   flexDirection: 'row',
   alignItems: 'center',
