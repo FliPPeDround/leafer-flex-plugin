@@ -23,7 +23,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
 
       - run: npx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - run: corepack enable
+      - run: pnpm install
+      - run: pnpm publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

@@ -1,5 +1,6 @@
 import { Box, Leafer, Rect, UI, usePlugin } from 'leafer-ui'
-import { plugin } from 'leafer-flex-plugin'
+import type { BoxFlexData } from 'leafer-flex-plugin'
+import plugin from 'leafer-flex-plugin'
 
 usePlugin(plugin)
 
@@ -15,8 +16,9 @@ const box = new Box({
   y: 100,
   margin: 10,
   flexDirection: 'row',
+  justifyContent: 'space-between',
   alignItems: 'center',
-})
+} as BoxFlexData)
 
 const rect = new Rect({
   width: 50,
@@ -35,3 +37,10 @@ const ui = UI.one({
 leafer.add(box)
 box.add(rect)
 box.add(ui)
+
+box.on('tap', () => {
+  // box.margin = 20
+  box.set({
+    y: box.y + 20,
+  })
+})

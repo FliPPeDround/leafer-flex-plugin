@@ -16,19 +16,19 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/types.ts",
       "require": "./dist/index.cjs",
       "import": "./dist/index.js"
     }
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types.ts",
   "typesVersions": {
     "*": {
       "*": [
         "./dist/*",
-        "./dist/index.d.ts"
+        "./dist/types.ts"
       ]
     }
   },
@@ -42,9 +42,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepublishOnly": "nr build",
-    "release": "bumpp && npm publish",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "release": "bumpp",
+    "test": "vitest"
   },
   "dependencies": {
     "leafer-ui": "1.0.0-beta.9",

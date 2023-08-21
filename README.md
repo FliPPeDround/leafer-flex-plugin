@@ -12,7 +12,7 @@ npm install leafer-flex-plugin
 
 ```js
 import { Box, Leafer, Rect, UI, usePlugin } from 'leafer-ui'
-import { plugin } from 'leafer-flex-plugin'
+import plugin from 'leafer-flex-plugin'
 
 usePlugin(plugin)
 
@@ -48,4 +48,24 @@ const ui = UI.one({
 leafer.add(box)
 box.add(rect)
 box.add(ui)
+```
+
+## ts类型安全
+
+```ts
+import type { BoxFlexData } from 'leafer-flex-plugin'
+import plugin from 'leafer-flex-plugin'
+
+const box = new Box({
+  width: 100,
+  height: 100,
+  fill: 'red',
+  draggable: true,
+  // 外边距
+  margin: 10,
+  // 横向排列
+  flexDirection: 'row',
+  // 主轴对齐方式
+  alignItems: 'center',
+} as BoxFlexData)
 ```
