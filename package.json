@@ -1,7 +1,7 @@
 {
   "name": "leafer-flex-plugin",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@8.6.10",
   "description": "",
   "author": "FliPPeDround <FliPPeDround@qq.com>",
